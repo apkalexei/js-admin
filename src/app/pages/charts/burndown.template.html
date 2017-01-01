@@ -1,0 +1,33 @@
+<div class="row">
+  <card title="Burndown">
+    <dx-chart [dataSource]="burndownData">
+      <dxi-series valueField="planned">
+         <dxo-point [visible]="false"></dxo-point>
+      </dxi-series>
+      <dxi-series valueField="todo"></dxi-series>
+
+      <dxo-argument-axis [valueMarginsEnabled]="false" discreteAxisDivisionMode="crossLabels">
+          <dxo-grid [visible]="true"></dxo-grid>
+          <dxo-title text="Days"></dxo-title>
+      </dxo-argument-axis>
+      <dxo-common-series-settings argumentField="date" type="line"></dxo-common-series-settings>
+      <dxo-tooltip [enabled]="true"></dxo-tooltip>
+      <dxo-legend [visible]="false"></dxo-legend>
+    </dx-chart>
+  </card>
+</div>
+
+ <div class="row">
+  <card title="Velocity">
+    <dx-chart [dataSource]="velocityData">
+      <dxi-series valueField="velocity" argumentField="sprint" type="line"></dxi-series>
+
+      <dxo-argument-axis [valueMarginsEnabled]="false" discreteAxisDivisionMode="crossLabels">
+          <dxo-grid [visible]="true"></dxo-grid>
+          <dxo-title text="Days"></dxo-title>
+      </dxo-argument-axis>
+      <dxo-tooltip [enabled]="true"></dxo-tooltip>
+      <dxo-legend [visible]="false"></dxo-legend>
+    </dx-chart>
+  </card>
+</div>

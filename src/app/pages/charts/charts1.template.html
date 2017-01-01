@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-6">
+    <card title="Example 1">
+      <dx-chart [dataSource]="dataSource">
+        <dxi-series argumentField="day" valueField="oranges" type="bar" color="#ffa500">
+        </dxi-series>
+        <dxo-legend [visible]="false"></dxo-legend>
+      </dx-chart>
+    </card>
+  </div>
+  <div class="col-md-6">
+    <card>
+      <dx-chart [dataSource]="dataSource">
+        <dxi-series argumentField="day" valueField="oranges" type="area" color="#ffa500"></dxi-series>
+        <dxo-legend [visible]="false"></dxo-legend>
+      </dx-chart>
+    </card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <card>
+      <dx-linear-gauge [value]="80" [valueIndicator]="{ type:'rhombus', color:'#A4DDED' }">
+          <dxo-title text="Humidity (%)" [font]="{ size: 16 }"></dxo-title>
+          <dxo-scale  [startValue]="0" [endValue]="100" [tickInterval]="10"></dxo-scale>
+          <dxo-range-container backgroundColor="#CACACA"></dxo-range-container>
+      </dx-linear-gauge>
+    </card>
+  </div>
+   <div class="col-md-3">
+    <card>
+      <dx-sparkline class="sparkline"
+              [dataSource]="[ { arg: 1, val: 1 }, { arg: 2, val: 2 }, { arg: 3, val: 8 }, { arg: 4, val: 5 } ]"
+              argumentField="arg" valueField="val" type="line" [showMinMax]="true">
+        </dx-sparkline>
+    </card>
+  </div>
+   <div class="col-md-3">
+    <card>
+      <dx-bullet [startScaleValue]="0" [endScaleValue]="35" [value]="20" [target]="25">
+        <dxo-tooltip [customizeTooltip]="customizeTooltip"></dxo-tooltip>
+      </dx-bullet>
+    </card>
+  </div>
+   <div class="col-md-3">
+    <card>
+        <dx-pie-chart [dataSource]="[ { arg: 1, val: 1 }, { arg: 2, val: 2 }, { arg: 3, val: 8 }, { arg: 4, val: 5 } ]">
+            <dxo-size [height]="200"></dxo-size>
+            <dxi-series type="doughnut" argumentField="arg">
+                <dxo-label [visible]="false"></dxo-label>
+            </dxi-series>
+            <dxo-legend [visible]="false"></dxo-legend>
+            <dxo-tooltip [enabled]="false"></dxo-tooltip>
+        </dx-pie-chart>
+    </card>
+  </div>
+</div>

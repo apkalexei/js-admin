@@ -1,0 +1,19 @@
+<dx-slide-out-view height="100%" [(menuVisible)]="mainMenuVisible">
+    <div *dxTemplate="let data of 'menu'" class="navigation-menu">
+        <div class="navigation-header">
+          User
+        </div>
+        <dx-tree-view [items]="items" class="navigation-treeview" (onItemClick)="onItemSelectionChanged($event)" [selectByClick]="true" selectionMode="single">
+        </dx-tree-view>
+    </div>
+    <div *dxTemplate="let data of 'content'" style="height: 100%;">
+        <dx-toolbar [items]="headerItems" class="header-bar">
+          <div *dxTemplate="let data of 'languageTemplate'">
+              <language-switcher></language-switcher>
+          </div>
+        </dx-toolbar>
+        <dx-scroll-view>
+          <router-outlet></router-outlet>
+        </dx-scroll-view>
+    </div>
+</dx-slide-out-view>

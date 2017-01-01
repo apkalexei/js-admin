@@ -1,0 +1,37 @@
+<div class="row">
+    <card title="DataGrid">
+      <dx-data-grid [dataSource]="dataSource">
+
+        <dxo-selection mode="single"></dxo-selection>
+        <dxo-search-panel [visible]="true"></dxo-search-panel>
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-group-panel [visible]="true"></dxo-group-panel>
+
+        <dxo-editing mode="row" [allowUpdating]="true" [allowDeleting]="true" [allowAdding]="true"></dxo-editing>
+
+        <dxi-column dataField="OrderNumber" [width]="130" caption="Invoice Number"></dxi-column>
+        <dxi-column dataField="OrderDate" [width]="160" dataType="date"></dxi-column>
+        <dxi-column dataField="Employee"></dxi-column>
+        <dxi-column dataField="CustomerStoreCity"  caption="City"></dxi-column>
+        <dxi-column dataField="CustomerStoreState"  caption="State"></dxi-column>
+        <dxi-column dataField="SaleAmount"  alignment="right" format="currency"></dxi-column>
+
+        <dxo-summary>
+            <dxi-total-item column="OrderNumber" summaryType="count"></dxi-total-item>
+            <dxi-total-item column="OrderDate" summaryType="min" [customizeText]="customizeDate"></dxi-total-item>
+            <dxi-total-item column="SaleAmount" summaryType="sum" valueFormat="currency"></dxi-total-item>
+        </dxo-summary>
+
+      </dx-data-grid>
+    </card>
+<div>
+
+<div class="row">
+    <card>
+        <dx-tab-panel>
+          <dxi-item title="text1">Content1</dxi-item>
+          <dxi-item title="text2">Content2</dxi-item>
+          <dxi-item title="text3">Content3</dxi-item>
+        </dx-tab-panel>
+    </card>
+<div>
