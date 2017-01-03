@@ -22,6 +22,12 @@ const mapsColors: any = {
 export class MapsComponent {
 	mapSource: any = (<any>window).DevExpress.viz.map.sources.world;
 
+	markers: any[] = [
+		{ location: '40.7825, -73.966111' }, 
+		{ location: [40.755833, -73.986389] }, 
+		{ location: { lat: 40.753889, lng: -73.981389 } }
+	];
+
 	constructor() { }
 
 	get mapsColors() {
