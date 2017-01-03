@@ -29,7 +29,14 @@
 <div class="row">
     <card>
         <dx-tab-panel>
-          <dxi-item title="text1">Content1</dxi-item>
+          <dxi-item title="text1">
+              <dx-list [items]="stackOverflowUsers" [height]="200">
+                  <div *dxTemplate="let user of 'item'">
+                      <img [src]="user.profile_image" />
+                      {{user.display_name}}
+                  </div>
+              </dx-list>
+          </dxi-item>
           <dxi-item title="text2">Content2</dxi-item>
           <dxi-item title="text3">Content3</dxi-item>
         </dx-tab-panel>
