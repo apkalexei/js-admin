@@ -6,7 +6,7 @@ import { CardModule } from '../../components/cards/Card';
   templateUrl: 'maps.template.html'
 })
 
-export class MapsPageComponent {
+export class MapsComponent {
   layers = [{
        dataSource: (<any> window).DevExpress.viz.map.sources.world
   }];
@@ -22,7 +22,6 @@ export class MapsPageComponent {
 
 @NgModule({
     imports: [ DxVectorMapModule, DxMapModule, CardModule ],
-    declarations: [ MapsPageComponent ],
-    exports: [ MapsPageComponent ]
+    declarations: [ MapsComponent ]
 })
-export class MapsPageModule { }
+export class MapsModule { }
