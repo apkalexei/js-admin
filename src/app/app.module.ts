@@ -1,23 +1,20 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { HttpModule } from '@angular/http'
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'
 import { 
   DxScrollViewModule, 
   DxToolbarModule, 
   DxSlideOutViewModule,
   DxTreeViewModule,
   DxTemplateModule 
-} from 'devextreme-angular';
+} from 'devextreme-angular'
 
-import { PagesRoutingModule } from './pages/pages.routes';
-
-import { CardModule } from './components/cards/Card';
-import { LanguageSwitcherModule } from './components/language/LanguageSwitcher';
-
+import { PagesRoutingModule } from './pages/pages.routes'
+import { LanguageSwitcherModule } from './components/language/LanguageSwitcher'
 
 @NgModule({
   declarations: [
@@ -27,8 +24,6 @@ import { LanguageSwitcherModule } from './components/language/LanguageSwitcher';
     BrowserModule,
     FormsModule,
     HttpModule,
-
-    CardModule,
 
     LanguageSwitcherModule,
     DxScrollViewModule,

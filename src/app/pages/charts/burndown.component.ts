@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { DxChartModule } from 'devextreme-angular';
-import { CardModule } from '../../components/cards/Card';
+import { CardModule } from '../../components/cards/card.component';
 
 @Component({
   templateUrl: 'burndown.template.html'

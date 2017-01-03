@@ -1,9 +1,9 @@
 import { Component, NgModule } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { Service } from '../../services/orders';
+import { Service } from '../../services/orders.service';
 import { Service as UsersService } from '../../services/stackoverflow-users.service';
 import { DxDataGridModule, DxTabPanelModule, DxListModule } from 'devextreme-angular';
-import { CardModule } from '../../components/cards/Card';
+import { CardModule } from '../../components/cards/card.component';
 
 @Component({
     templateUrl: 'data-grid.template.html',

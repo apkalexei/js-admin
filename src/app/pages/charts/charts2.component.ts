@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core'
 import { 
   DxChartModule, 
   DxButtonModule,
@@ -9,8 +9,8 @@ import {
   DxCheckBoxModule,
   DxValidationSummaryModule
 } from 'devextreme-angular';
-import { CardModule } from '../../components/cards/Card';
-import { Service } from '../../services/chartsData';
+import { CardModule } from '../../components/cards/card.component'
+import { Service } from '../../services/charts-data.service'
 
 @Component({
   templateUrl: 'charts2.template.html'

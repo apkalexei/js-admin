@@ -1,13 +1,15 @@
 <div class="row">
+  <div class="col-lg-6">
     <card title="Vector Map">
-        <dx-vector-map class="full-width" [layers]="layers"></dx-vector-map>
+        <dx-vector-map>
+            <dxi-layer [dataSource]="mapSource" [customize]="customizeLayers">
+            </dxi-layer>
+        </dx-vector-map>
     </card>
-
+  </div>
+  <div class="col-lg-6">
     <card title="Google Maps">
-        <dx-map width="100%" onClick="mapsClickHandler()"></dx-map>
+        <dx-map width="100%"></dx-map>
     </card>
-
-    <card>
-        Card without title
-    </card>
-<div>
+  </div>
+</div>

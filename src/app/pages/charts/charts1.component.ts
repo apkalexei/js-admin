@@ -1,12 +1,12 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core'
 import { 
   DxChartModule, 
   DxSparklineModule, 
   DxBulletModule,
   DxPieChartModule,
   DxLinearGaugeModule
-} from 'devextreme-angular';
-import { CardModule } from '../../components/cards/Card';
+} from 'devextreme-angular'
+import { CardModule } from '../../components/cards/card.component'
 
 @Component({
   templateUrl: 'charts1.template.html'
