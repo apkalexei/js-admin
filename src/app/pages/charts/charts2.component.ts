@@ -1,4 +1,7 @@
 import { Component, NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { Observable } from "rxjs/Rx"
+
 import { 
   DxChartModule, 
   DxButtonModule,
@@ -10,7 +13,7 @@ import {
   DxValidationSummaryModule
 } from 'devextreme-angular';
 import { CardModule } from '../../components/cards/card.component'
-import { Service } from '../../services/charts-data.service'
+import { Service, ChartData } from '../../services/charts-data.service'
 
 @Component({
   templateUrl: 'charts2.template.html'
@@ -37,7 +40,7 @@ export class ChartNestedPage2 {
     enabled: true
   }
 
-  dataSource: any[];
+  dataSource: Observable<ChartData[]>;
 
   constructor(service: Service) { 
     this.dataSource = service.getChartData();
@@ -45,7 +48,8 @@ export class ChartNestedPage2 {
 }
 
 @NgModule({
-    imports: [ 
+    imports: [
+      CommonModule,
       DxChartModule,
       DxButtonModule,
       DxSelectBoxModule,
@@ -57,6 +61,7 @@ export class ChartNestedPage2 {
       CardModule
     ],
     declarations: [ ChartNestedPage2 ],
-    exports: [ ChartNestedPage2 ]
+    exports: [ ChartNestedPage2 ],
+    providers: [ Service ]
 })
 export class ChartNestedPage2Module { }

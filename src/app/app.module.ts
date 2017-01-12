@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
-
+import { AngularFireModule } from 'angularfire2'
 import { AppComponent } from './app.component'
 import { 
   DxScrollViewModule, 
@@ -16,6 +16,15 @@ import {
 import { PagesRoutingModule } from './pages/pages.routes'
 import { LanguageSwitcherModule } from './components/language/LanguageSwitcher'
 
+ // Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBMNzF7371d342zIACnSM6Kd9ZHn6J63Os",
+    authDomain: "js-admin.firebaseapp.com",
+    databaseURL: "https://js-admin.firebaseio.com",
+    storageBucket: "js-admin.appspot.com",
+    messagingSenderId: "877400492199"
+};
+
 @NgModule({
   declarations: [
     AppComponent
@@ -24,6 +33,8 @@ import { LanguageSwitcherModule } from './components/language/LanguageSwitcher'
     BrowserModule,
     FormsModule,
     HttpModule,
+
+    AngularFireModule.initializeApp(config),
 
     LanguageSwitcherModule,
     DxScrollViewModule,
@@ -37,5 +48,3 @@ import { LanguageSwitcherModule } from './components/language/LanguageSwitcher'
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-platformBrowserDynamic().bootstrapModule(AppModule);

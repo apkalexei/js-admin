@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-8">
     <card title="Example 2">
-      <dx-chart class="full-width" title="Stock Price" [series]="series" [commonSeriesSettings]="commonSeriesSettings" [dataSource]="dataSource"></dx-chart>
+      <dx-chart title="Stock Price" [series]="series" [commonSeriesSettings]="commonSeriesSettings" [dataSource]="dataSource | async"></dx-chart>
     </card>
   </div>
   <div class="col-md-4">
