@@ -1,0 +1,39 @@
+<div class="navigation-header">
+    <div *ngIf="user">
+        {{user.email}}
+        <dx-button text="Logout" (onClick)="onLogoutClick()"></dx-button>
+    </div>
+    <div *ngIf="!user">
+        Please log in
+        <dx-button text="Login" (onClick)="onShowLoginPopup()"></dx-button>
+    </div>
+</div>
+
+<dx-popup [(visible)]="showLoginPopup" height="auto" [width]="300">
+    <div *dxTemplate="let data of 'content'">
+        <dx-validation-group class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Login</div>
+                <div class="dx-field-value">
+                    <dx-text-box [(value)]="login">
+                        <dx-validator>
+                            <dxi-validation-rule type="email" message="Login is invalid"></dxi-validation-rule>
+                            <dxi-validation-rule type="required" message="Login is required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Password</div>
+                <div class="dx-field-value">
+                    <dx-text-box mode="password" [(value)]="password">
+                        <dx-validator>
+                            <dxi-validation-rule type="required" message="Password is required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                </div>
+            </div>
+            <dx-button text="Login" (onClick)="onLoginClick($event)"></dx-button>
+        </dx-validation-group>
+    </div>
+</dx-popup>

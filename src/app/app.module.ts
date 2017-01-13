@@ -3,7 +3,11 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
-import { AngularFireModule } from 'angularfire2'
+import { 
+  AngularFireModule,
+  AuthMethods, 
+  AuthProviders
+} from 'angularfire2'
 import { AppComponent } from './app.component'
 import { 
   DxScrollViewModule, 
@@ -15,6 +19,7 @@ import {
 
 import { PagesRoutingModule } from './pages/pages.routes'
 import { LanguageSwitcherModule } from './components/language/LanguageSwitcher'
+import { NavigationHeaderModule } from './components/navigation-header/navigation-header.component'
 
  // Initialize Firebase
 var config = {
@@ -34,9 +39,14 @@ var config = {
     FormsModule,
     HttpModule,
 
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(config, {
+      provider: AuthProviders.Password,
+      method: AuthMethods.Password
+    }),
 
     LanguageSwitcherModule,
+    NavigationHeaderModule,
+    
     DxScrollViewModule,
     DxToolbarModule,
     DxSlideOutViewModule,

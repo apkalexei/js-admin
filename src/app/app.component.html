@@ -1,8 +1,6 @@
 <dx-slide-out-view height="100%" [(menuVisible)]="mainMenuVisible">
     <div *dxTemplate="let data of 'menu'" class="navigation-menu">
-        <div class="navigation-header">
-          User
-        </div>
+        <navigation-header></navigation-header>
         <dx-tree-view [items]="items" class="navigation-treeview" (onItemClick)="onItemSelectionChanged($event)" [selectByClick]="true" selectionMode="single">
         </dx-tree-view>
     </div>
